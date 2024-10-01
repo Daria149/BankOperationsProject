@@ -1,5 +1,6 @@
 from mypy.server.objgraph import Iterable
 
+
 dictionary_list = [
     {"id": 41428829, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
     {"id": 939719570, "state": "EXECUTED", "date": "2018-06-30T02:08:58.425572"},
@@ -20,7 +21,7 @@ def filter_by_state(dictionary_list: dict) -> list:
 
 
 def sort_by_date(dictionary_list: Iterable[dict], parameter: bool = True) -> list:
-    """Функция, сортирующая список по дате"""
+    """Функция, сортирующая список словарей по дате (date)"""
     sorted_dictionary_list = sorted(
         dictionary_list, key=lambda x: x["date"], reverse=parameter
     )
