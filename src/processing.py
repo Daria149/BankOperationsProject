@@ -15,8 +15,6 @@ def filter_by_state(dictionary_list: List[dict], state: str = "EXECUTED") -> Lis
     for element in dictionary_list:
         if element["state"] == state:
             new_dictionary_list.append(element)
-        else:
-            continue
     return new_dictionary_list
 
 
