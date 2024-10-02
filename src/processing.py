@@ -1,4 +1,4 @@
-from mypy.server.objgraph import Iterable
+from typing import List
 
 
 dictionary_list = [
@@ -9,19 +9,19 @@ dictionary_list = [
 ]
 
 
-def filter_by_state(dictionary_list: dict) -> list:
-    """Функция, фильтрующая список словарей по статусу (state)"""
+def filter_by_state(dictionary_list: List[dict], state: str = "EXECUTED") -> List[dict]:
+    """Функция фильтрует список словарей по статусу (state)"""
     new_dictionary_list = []
     for element in dictionary_list:
-        if element["state"] == "EXECUTED":
+        if element["state"] == state:
             new_dictionary_list.append(element)
         else:
             continue
     return new_dictionary_list
 
 
-def sort_by_date(dictionary_list: Iterable[dict], parameter: bool = True) -> list:
-    """Функция, сортирующая список словарей по дате (date)"""
+def sort_by_date(dictionary_list: List[dict], parameter: bool = True) -> List[dict]:
+    """Функция сортирует список словарей по дате (date)"""
     sorted_dictionary_list = sorted(
         dictionary_list, key=lambda x: x["date"], reverse=parameter
     )
