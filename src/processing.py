@@ -10,7 +10,7 @@ dictionary_list = [
 
 
 def filter_by_state(dictionary_list: List[dict], state: str = "EXECUTED") -> List[dict]:
-    """Функция фильтрует список словарей по статусу (state)"""
+    '''Функция фильтрует список словарей по статусу (state)'''
     new_dictionary_list = []
     for element in dictionary_list:
         if element["state"] == state:
@@ -21,7 +21,7 @@ def filter_by_state(dictionary_list: List[dict], state: str = "EXECUTED") -> Lis
 
 
 def sort_by_date(dictionary_list: List[dict], parameter: bool = True) -> List[dict]:
-    """Функция сортирует список словарей по дате (date)"""
+    '''Функция сортирует список словарей по дате (date)'''
     sorted_dictionary_list = sorted(
         dictionary_list, key=lambda x: x["date"], reverse=parameter
     )
