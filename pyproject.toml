@@ -25,6 +25,7 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 
+
 [tool.mypy]
 disallow_untyped_defs = true
 no_implicit_optional = true
@@ -48,6 +49,7 @@ exclude = '''
                      # в корне проекта
 )
 '''
+
 
 
 [tool.isort]
