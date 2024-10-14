@@ -16,7 +16,7 @@ def mask_account_card(account_information: str) -> str:
     elif len(card_account_number) == 16 or len(card_account_number) == 18 or len(card_account_number) == 19:
         return f"{card_account_type} {get_mask_card_number(card_account_number)}"
     else:
-        raise ValueError("Ошибка ввода!")
+        raise ValueError("Ошибка ввода")
 
 
 def get_date(information: str) -> str:
