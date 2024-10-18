@@ -48,31 +48,29 @@ transactions = [
 ]
 
 
-def filter_by_currency(all_transactions: list, currency: str) -> None:
+def filter_by_currency(all_transactions, currency):
     """Функция, которая выдает транзакции, где валюта операции соответствует заданной."""
     if all_transactions == []:
-        return "Нет данных"
+        raise StopIteration("Нет данных")
     elif all_transactions != []:
-        for transaction in all_transactions:
-            filtered_transactions = [
-                filter(
-                    lambda transaction: transaction.get("operationAmount").get("currency").get("name") == currency,
-                    all_transactions,
-                )
-            ]
-            yield filtered_transactions
-    usd_transactions = filter_by_currency(transaction, "USD")
-    for _ in range(2):
-        print(next(usd_transactions))
+          for transaction in all_transactions:
+              if transaction.get("operationAmount").get("currency").get("name") == currency:
+                  yield transaction
+              else:
+                  continue
+    usd_transactions = filter_by_currency(transactions, "USD")
+    for _ in range(5):
+          print(next(usd_transactions))
 
 
 def transaction_descriptions(list_transactions):
     """Функция, которая возвращает описание каждой операции по очереди"""
     if list_transactions == []:
-        return "Нет данных"
+        raise StopIteration("Нет данных")
     elif list_transactions != []:
-        for transaction in list_transactions:
-            yield transaction.get("description")
+        for i, trans in enumerate(list_transactions):
+            transaction = list_transactions[i].get("description")
+            yield transaction
     descriptions = transaction_descriptions(transactions)
     for _ in range(5):
         print(next(descriptions))
