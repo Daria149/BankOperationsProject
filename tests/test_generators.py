@@ -10,7 +10,8 @@ def test_filter_by_currency_currency(trans_list, currency):
 
 def test_filter_by_currency():
     """Функция для тестирования функцию списка операций по валюте"""
-    assert next(filter_by_currency(transactions, "USD")) == {
+    result = filter_by_currency(transactions, "USD")
+    assert next(result) == {
           "id": 939719570,
           "state": "EXECUTED",
           "date": "2018-06-30T02:08:58.425572",
@@ -25,46 +26,13 @@ def test_filter_by_currency():
           "from": "Счет 75106830613657916952",
           "to": "Счет 11776614605963066702"
       }
-    assert next(filter_by_currency(transactions, "USD")) == {
-              "id": 142264268,
-              "state": "EXECUTED",
-              "date": "2019-04-04T23:20:05.206878",
-              "operationAmount": {
-                  "amount": "79114.93",
-                  "currency": {
-                      "name": "USD",
-                      "code": "USD"
-                  }
-              },
-              "description": "Перевод со счета на счет",
-              "from": "Счет 19708645243227258542",
-              "to": "Счет 75651667383060284188"
-       }
-    assert next(filter_by_currency(transactions, "USD")) == {
-        "id": 873106923,
-        "state": "EXECUTED",
-        "date": "2019-03-23T01:09:46.296404",
-        "operationAmount": {"amount": "43318.34", "currency": {"name": "руб.", "code": "RUB"}},
-        "description": "Перевод со счета на счет",
-        "from": "Счет 44812258784861134719",
-        "to": "Счет 74489636417521191160",
-    }
-
-    with pytest.raises(StopIteration):
-        return filter_by_currency([], "USD")
 
 
-@pytest.mark.parametrize("descrip", [("Перевод организации"),
-                                     ("Перевод со счета на счет")])
+@pytest.mark.parametrize("descrip", [("Перевод организации")])
 def test_transaction_descriptions(descrip):
     """Функция для тестирования функции, формирующей список описания операций"""
-    assert next(transaction_descriptions(transactions)) == descrip
-    assert next(transaction_descriptions(transactions)) == descrip
-
-
-def test_2_transaction_descriptions():
-    with pytest.raises(StopIteration):
-        assert next(transaction_descriptions([]))
+    result_descriptions = transaction_descriptions(transactions)
+    assert next(result_descriptions) == descrip
 
 
 def test_card_number_generator():

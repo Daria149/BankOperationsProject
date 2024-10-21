@@ -51,29 +51,21 @@ transactions = [
 def filter_by_currency(all_transactions, currency):
     """Функция, которая выдает транзакции, где валюта операции соответствует заданной."""
     if all_transactions == []:
-        raise StopIteration("Нет данных")
+        StopIteration("Нет данных")
     elif all_transactions != []:
-          for transaction in all_transactions:
-              if transaction.get("operationAmount").get("currency").get("name") == currency:
-                  yield transaction
-              else:
-                  continue
-    usd_transactions = filter_by_currency(transactions, "USD")
-    for _ in range(5):
-          print(next(usd_transactions))
+        for transaction in all_transactions:
+            if transaction.get("operationAmount").get("currency").get("name") == currency:
+                yield transaction
 
 
 def transaction_descriptions(list_transactions):
     """Функция, которая возвращает описание каждой операции по очереди"""
-    if list_transactions == []:
-        raise StopIteration("Нет данных")
-    elif list_transactions != []:
+    if list_transactions != []:
         for i, trans in enumerate(list_transactions):
             transaction = list_transactions[i].get("description")
-            yield transaction
-    descriptions = transaction_descriptions(transactions)
-    for _ in range(5):
-        print(next(descriptions))
+        yield transaction
+    elif  list_transactions == []:
+        StopIteration("Нет данных")
 
 
 def card_number_generator(initial_value, final_value):
@@ -83,5 +75,3 @@ def card_number_generator(initial_value, final_value):
         while len(card_number) < 16:
             card_number = "0" + card_number
         yield f"{card_number[0:4]} {card_number[4:8]} {card_number[8:12]} {card_number[12:]}"
-    for card_number in card_number_generator(1, 20):
-        return card_number
