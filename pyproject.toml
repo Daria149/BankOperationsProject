@@ -5,6 +5,7 @@ description = ""
 authors = ["Daria149 <strelcova.dasha87@gmail.com>"]
 readme = "README.md"
 
+
 [tool.poetry.dependencies]
 python = "^3.13"
 requests = "^2.32.3"
@@ -19,6 +20,8 @@ isort = "^5.13.2"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.3"
+pytest-cov = "^5.0.0"
+
 
 [build-system]
 requires = ["poetry-core"]

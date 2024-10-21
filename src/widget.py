@@ -2,7 +2,7 @@ from src.masks import get_mask_account, get_mask_card_number
 
 
 def mask_account_card(account_information: str) -> str:
-    """Функция, маскирует номер карты/счета"""
+    """Функция, которая маскирует номер карты/счета"""
     card_account_number = ""
     space_symbol_index = account_information.rfind(" ")
 
@@ -16,11 +16,11 @@ def mask_account_card(account_information: str) -> str:
     elif len(card_account_number) == 16 or len(card_account_number) == 18 or len(card_account_number) == 19:
         return f"{card_account_type} {get_mask_card_number(card_account_number)}"
     else:
-        raise ValueError("Ошибка ввода!")
+        raise ValueError("Ошибка ввода")
 
 
 def get_date(information: str) -> str:
-    """Функция выводит корректную дату"""
+    """Функция, которая выводит корректную дату"""
     if information == "":
         return "No date"
     else:
