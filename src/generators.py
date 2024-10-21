@@ -51,11 +51,13 @@ transactions = [
 def filter_by_currency(all_transactions, currency):
     """Функция, которая выдает транзакции, где валюта операции соответствует заданной."""
     if all_transactions == []:
-        StopIteration("Нет данных")
+        raise StopIteration("Нет данных")
     elif all_transactions != []:
         for transaction in all_transactions:
             if transaction.get("operationAmount").get("currency").get("name") == currency:
                 yield transaction
+            else:
+                raise StopIteration("Нет данных")
 
 
 def transaction_descriptions(list_transactions):
@@ -64,7 +66,7 @@ def transaction_descriptions(list_transactions):
         for i, trans in enumerate(list_transactions):
             transaction = list_transactions[i].get("description")
         yield transaction
-    elif  list_transactions == []:
+    elif list_transactions == []:
         StopIteration("Нет данных")
 
 

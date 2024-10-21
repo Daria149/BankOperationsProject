@@ -2,6 +2,7 @@ import pytest
 
 from src.generators import card_number_generator, filter_by_currency, transaction_descriptions, transactions
 
+
 @pytest.fixture
 def test_filter_by_currency_currency(trans_list, currency):
     for trans in trans_list:
@@ -28,11 +29,26 @@ def test_filter_by_currency():
       }
 
 
+if __name__ == '__main__':
+    with pytest.raises(StopIteration):
+        filter_by_currency([], "USD")
+
+
+if __name__ == '__main__':
+    with pytest.raises(StopIteration):
+        filter_by_currency(transactions, "")
+
+
 @pytest.mark.parametrize("descrip", [("Перевод организации")])
 def test_transaction_descriptions(descrip):
     """Функция для тестирования функции, формирующей список описания операций"""
     result_descriptions = transaction_descriptions(transactions)
     assert next(result_descriptions) == descrip
+
+
+if __name__ == '__main__':
+    with pytest.raises(StopIteration):
+        transaction_descriptions([])
 
 
 def test_card_number_generator():

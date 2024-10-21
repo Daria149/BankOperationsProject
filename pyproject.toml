@@ -6,7 +6,6 @@ authors = ["Daria149 <strelcova.dasha87@gmail.com>"]
 readme = "README.md"
 
 
-
 [tool.poetry.dependencies]
 python = "^3.13"
 requests = "^2.32.3"
