@@ -5,13 +5,14 @@ from typing import Any
 
 
 def log(file_name: Any = None) -> Callable:
+    """Декоратор для логирования функции"""
     def decorator_func(func: Callable) -> Callable:
         @wraps(func)
         def wrapper(*args: Any, **kwargs: Any) -> Any:
             try:
-                time_1 = round(time())
+                time_1 = time()
                 result = func(*args, **kwargs)
-                time_2 = round(time())
+                time_2 = time()
                 if file_name:
                     with open(file_name, "a", encoding="utf-8") as file:
                         file.write(f"{func.__name__} OK\n")

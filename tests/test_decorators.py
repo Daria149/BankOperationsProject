@@ -3,6 +3,7 @@ from src.decorators import log, result_function
 
 
 def test_log_func():
+    """Функция, тестирующая функцию возведения в степень с выводом в консоль"""
     @log("")
     def result_function(x, y):
         return x ** y
@@ -17,6 +18,7 @@ def test_2_log_func():
 
 
 def test_3_log_func():
+    """Функция, тестирующая функцию возведения в степень с выводом информации в файл"""
     @log("func_log.txt")
     def result_function(x, y):
         return x ** y
