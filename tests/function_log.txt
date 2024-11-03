@@ -1,0 +1,31 @@
+1729787681.3437111 OK
+Начало работы функции: 1729787681.3437111
+Документация функции result_function: Функция, возводящая в степень
+Результат работы функции: 2
+Конец работы функции: 1729787681.3437152
+Ошибка функции result_function: result_function() missing 2 required positional arguments: 'x' and 'y'. Input: (), {}1729787768.5726848 OK
+Начало работы функции: 1729787768.5726848
+Документация функции result_function: Функция, возводящая в степень
+Результат работы функции: 2
+Конец работы функции: 1729787768.5726888
+Ошибка функции result_function: result_function() missing 2 required positional arguments: 'x' and 'y'. Input: (), {}1729787855.8078206 OK
+Начало работы функции: 1729787855.8078206
+Документация функции result_function: Функция, возводящая в степень
+Результат работы функции: 2
+Конец работы функции: 1729787855.8078244
+Ошибка функции result_function: result_function() missing 2 required positional arguments: 'x' and 'y'. Input: (), {}1729787904.379922 OK
+Начало работы функции: 1729787904.379922
+Документация функции result_function: Функция, возводящая в степень
+Результат работы функции: 2
+Конец работы функции: 1729787904.3799245
+Ошибка функции result_function: result_function() missing 2 required positional arguments: 'x' and 'y'. Input: (), {}1729788617.7009563 OK
+Начало работы функции: 1729788617.7009563
+Документация функции result_function: Функция, возводящая в степень
+Результат работы функции: 2
+Конец работы функции: 1729788617.7009604
+Ошибка функции result_function: result_function() missing 2 required positional arguments: 'x' and 'y'. Input: (), {}1729788861.551745 OK
+Начало работы функции: 1729788861.551745
+Документация функции result_function: Функция, возводящая в степень
+Результат работы функции: 1
+Конец работы функции: 1729788861.5517476
+Ошибка функции result_function: result_function() missing 2 required positional arguments: 'x' and 'y'. Input: (), {}
