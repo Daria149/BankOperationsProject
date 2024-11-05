@@ -4,9 +4,9 @@ from typing import Any
 
 from src.external_api import get_currency
 
-logger = logging.getLogger('utils')
-file_handler = logging.FileHandler('logs\\utils.log', mode='w', encoding='utf-8')
-file_formatter = logging.Formatter('%(asctime)s %(filename)s %(levelname)s: %(message)s')
+logger = logging.getLogger("utils")
+file_handler = logging.FileHandler("logs\\utils.log", mode="w", encoding="utf-8")
+file_formatter = logging.Formatter("%(asctime)s %(filename)s %(levelname)s: %(message)s")
 file_handler.setFormatter(file_formatter)
 logger.addHandler(file_handler)
 logger.setLevel(logging.INFO)
@@ -23,10 +23,10 @@ def get_operations_transactions(file_path: Any) -> Any:
                 if type(transaction_info) is not list or len(transaction_info) == 0:
                     return datas
                 else:
-                    logging.info(f"Обработка данных Json-файла прошла успешно")
+                    logging.info("Обработка данных Json-файла прошла успешно")
                     return transaction_info
             except json.JSONDecodeError:
-                logging.error(f"Ошибка декодирования")
+                logging.error("Ошибка декодирования")
                 return datas
     except FileNotFoundError:
         logging.error("Ошибка поиска файла")
