@@ -1,6 +1,8 @@
 from src.masks import get_mask_account, get_mask_card_number
 from src.processing import sort_by_date
+
 from src.widget import get_date
+from src.utils import transactions_sum, get_operations_transactions
 
 print(get_mask_card_number(7000792289606361))
 
@@ -18,3 +20,12 @@ print(
 )
 
 print(get_date("2024-03-11T02:26:18.671407"))
+
+
+if __name__ == "__main__":
+    print(transactions_sum(
+            get_operations_transactions(
+                "C:/Users/Darya/Desktop/ProjectsHometasks/BankOperationsProject/data/operations.json"
+            )
+        )
+    )
