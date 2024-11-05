@@ -19,7 +19,3 @@ def get_currency(to_c: str, from_c: str, parameter: Union[int, float]) -> float:
         data = response.json()
         amount = round(data["result"], 2)
         return amount
-
-
-if __name__ == "__main__":
-    print(get_currency("RUB", "USD", 10000))
