@@ -6,6 +6,7 @@ from typing import Any
 
 def log(file_name: Any = None) -> Callable:
     """Декоратор для логирования функции"""
+
     def decorator_func(func: Callable) -> Callable:
         @wraps(func)
         def wrapper(*args: Any, **kwargs: Any) -> Any:
@@ -33,14 +34,16 @@ def log(file_name: Any = None) -> Callable:
                 else:
                     print(f"Ошибка функции {func.__name__}: {e}. Input: {args}, {kwargs}")
             return result
+
         return wrapper
+
     return decorator_func
 
 
 @log(file_name="")
 def result_function(x: int, y: int) -> Any:
     """Функция, возводящая в степень"""
-    result_of_function = x ** y
+    result_of_function = x**y
     return result_of_function
 
 

@@ -1,7 +1,6 @@
 import logging
 from typing import Union
 
-
 logger = logging.getLogger("masks")
 file_handler = logging.FileHandler("logs\\masks.log", mode="w", encoding="utf-8")
 file_formatter = logging.Formatter("%(asctime)s %(filename)s %(levelname)s: %(message)s")
