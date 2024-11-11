@@ -25,3 +25,7 @@ def test_read_from_excel(mock_pd_read_excel):
     ex_datas = "C:\\Users\\Darya\\Desktop\\ProjectsHometasks\\FilesForTasks\\test_transactions_excel.xlsx"
     mock_pd_read_excel.return_value = pd.read_excel(ex_datas)
     assert read_from_excel(ex_datas) == (4, 2)
+
+
+def test_2_read_from_excel():
+    assert read_from_excel("C:\\Users\\Darya\\Desktop\\ProjectsHometasks\\FilesForTasks\\transaction") == []
