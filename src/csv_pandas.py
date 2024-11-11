@@ -1,7 +1,6 @@
 import csv
 import logging
 from typing import Any
-
 import pandas as pd
 
 reading_logger = logging.getLogger("csv_pandas")
