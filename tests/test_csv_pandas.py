@@ -13,6 +13,7 @@ def test_read_from_csv(mock_pd_read_csv):
 
 
 def test_2_read_from_csv():
+    """Функция, тестирующая функцию чтения данных из CSV-файла с неккоректным путём к файлу"""
     assert read_from_csv("C:\\Users\\Darya\\Desktop\\ProjectsHometasks\\FilesForTasks\\transaction") == []
 
 
@@ -26,4 +27,5 @@ def test_read_from_excel(mock_read_excel):
 
 
 def test_2_read_from_excel():
+    """Функция, тестирующая функцию чтения данных из excel-файла с неккоректным путём к файлу"""
     assert read_from_excel("C:\\Users\\Darya\\Desktop\\ProjectsHometasks\\FilesForTasks\\transaction") == []
