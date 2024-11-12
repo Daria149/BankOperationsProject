@@ -1,6 +1,6 @@
-import csv
 import logging
 from typing import Any
+
 import pandas as pd
 
 reading_logger = logging.getLogger("csv_pandas")
@@ -33,17 +33,5 @@ def read_from_excel(file_path: str) -> Any:
     except FileNotFoundError:
         logging.error("Файл не найден")
         return []
-    if datas.empty:
-        logging.error("В файле нет данных!")
-        return "Файл пустой"
-    else:
-        logging.info("Файл читается")
-        return datas.shape
-
-
-# if __name__ == "__main__":
-#    print(read_from_csv('C:\\Users\\Darya\\Desktop\\ProjectsHometasks\\FilesForTasks\\transactions.csv'))
-
-
-# if __name__ == "__main__":
-#    print(read_from_excel('C:\\Users\\Darya\\Desktop\\ProjectsHometasks\\FilesForTasks\\transactions_excel.xlsx'))
+    logging.info("Файл читается")
+    return datas.shape
