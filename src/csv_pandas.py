@@ -34,4 +34,5 @@ def read_from_excel(file_path: str) -> Any:
         logging.error("Файл не найден")
         return []
     logging.info("Файл читается")
-    return datas.shape
+    dict_datas = datas.to_dict(orient="records")
+    return dict_datas
