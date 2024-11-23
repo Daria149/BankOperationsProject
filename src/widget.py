@@ -20,7 +20,7 @@ def mask_account_card(account_information: str) -> str:
 
 
 def get_date(information: str) -> str:
-    """Функция, которая выводит корректную дату"""
+    """Функция, которая выводит корректную дату."""
     if information == "":
         return "No date"
     else:

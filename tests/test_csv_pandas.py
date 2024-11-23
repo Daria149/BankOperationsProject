@@ -13,7 +13,7 @@ def test_read_from_csv(mock_pd_read_csv):
 
 
 def test_2_read_from_csv():
-    """Функция, тестирующая функцию чтения данных из CSV-файла с неккоректным путём к файлу"""
+    """Функция, тестирующая функцию чтения данных из CSV-файла с неккоректным путём к файлу."""
     assert read_from_csv("C:\\Users\\Darya\\Desktop\\ProjectsHometasks\\FilesForTasks\\transaction") == []
 
 

@@ -7,6 +7,7 @@ from src.external_api import get_currency
 
 @patch("requests.get")
 def test_get_currency(mock_get):
+    """Функция, тестирующая функцию конвертации транзакции с использованием API"""
     mock_get.return_value.status_code = 200
     mock_get.return_value.json.return_value = {
         "date": "2018-02-22",

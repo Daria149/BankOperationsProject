@@ -46,5 +46,4 @@ def result_function(x: int, y: int) -> Any:
     result_of_function = x**y
     return result_of_function
 
-
 print(result_function(1, 2))

@@ -27,7 +27,7 @@ def read_from_csv(file_path: str) -> Any:
 
 
 def read_from_excel(file_path: str) -> Any:
-    """Функция, читающая данные из CSV-файла"""
+    """Функция, читающая данные из Excel-файла"""
     try:
         datas = pd.read_excel(file_path)
     except FileNotFoundError:
@@ -36,3 +36,10 @@ def read_from_excel(file_path: str) -> Any:
     logging.info("Файл читается")
     dict_datas = datas.to_dict(orient="records")
     return dict_datas
+
+
+# if __name__ == "__main__":
+#     print(read_from_csv("C:\\Users\\Darya\\Desktop\\ProjectsHometasks\\FilesForTasks\\transactions.csv"))
+
+if __name__ == "__main__":
+    print(read_from_excel("C:\\Users\\Darya\\Desktop\\ProjectsHometasks\\FilesForTasks\\transactions_excel.xlsx"))

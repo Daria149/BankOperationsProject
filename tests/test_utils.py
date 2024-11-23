@@ -1,6 +1,5 @@
 from unittest.mock import patch
 
-from src.external_api import get_currency
 from src.utils import get_operations_transactions, transactions_sum
 
 
@@ -27,7 +26,7 @@ def test_2_get_operations_transactions():
 
 
 def test_3_get_operations_transactions():
-    """Функция, тестирующая функцию преобразования данных из Json-файла с ошибочным указанием файла"""
+    """Функция, тестирующая функцию преобразования данных из Json-файла с ошибочным указанием файла."""
     path = get_operations_transactions("BankOperationsProject/data/operations")
     assert path == []
 

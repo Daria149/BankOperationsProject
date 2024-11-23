@@ -37,6 +37,7 @@ no_implicit_optional = true
 warn_return_any = true
 exclude = 'venv'
 
+
 [tool.black]
 line-length = 119
 exclude = '''
