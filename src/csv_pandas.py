@@ -27,7 +27,7 @@ def read_from_csv(file_path: str) -> Any:
 
 
 def read_from_excel(file_path: str) -> Any:
-    """Функция, читающая данные из Excel-файла"""
+    """Функция, читающая данные из Excel-файла."""
     try:
         datas = pd.read_excel(file_path)
     except FileNotFoundError:

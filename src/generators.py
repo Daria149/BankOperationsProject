@@ -60,7 +60,7 @@ def filter_by_currency(all_transactions, currency):
 
 
 def transaction_descriptions(list_transactions):
-    """Функция, возвращащая описание каждой операции по очереди"""
+    """Функция, возвращащая описание каждой операции по очереди."""
     if list_transactions != []:
         for i, trans in enumerate(list_transactions):
             transaction = list_transactions[i].get("description")

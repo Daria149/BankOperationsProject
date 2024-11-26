@@ -20,7 +20,7 @@ def get_mask_account(number: Union[int, str]) -> str:
 
 
 def get_mask_card_number(numbers: Union[int, str]) -> str:
-    """Функция, которая принимает на вход номер карты и возвращает её маску"""
+    """Функция, которая принимает на вход номер карты и возвращает её маску."""
 
     card_number = str(numbers)
     logger.info("Данные для вывода маски карты получены")

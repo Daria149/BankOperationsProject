@@ -13,7 +13,7 @@ from src.widget import get_date, mask_account_card
     ],
 )
 def test_mask_account_card(information: str, expected_result: str) -> None:
-    """Функция, тестирующая функцию, которая маскирует номер карты/счета"""
+    """Функция, тестирующая функцию, которая маскирует номер карты/счета."""
     assert mask_account_card(information) == expected_result
 
 

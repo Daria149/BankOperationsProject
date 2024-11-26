@@ -36,7 +36,7 @@ def get_operations_transactions(file_path: Any) -> Any:
 
 
 def transactions_sum(func: Any) -> float:
-    """Функция возвращает сумму транзакции в рублях"""
+    """Функция возвращает сумму транзакции в рублях."""
     datas = func
     data_str = []
     amount = []

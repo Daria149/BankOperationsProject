@@ -10,7 +10,7 @@ def test_filter_by_currency_currency(trans_list, currency):
 
 
 def test_filter_by_currency():
-    """Функция для тестирования функции списка операций по валюте"""
+    """Функция для тестирования функции списка операций по валюте."""
     result = filter_by_currency(transactions, "USD")
     assert next(result) == {
         "id": 939719570,

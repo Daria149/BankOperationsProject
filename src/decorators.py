@@ -42,7 +42,7 @@ def log(file_name: Any = None) -> Callable:
 
 @log(file_name="")
 def result_function(x: int, y: int) -> Any:
-    """Функция, возводящая в степень"""
+    """Функция, возводящая в степень."""
     result_of_function = x**y
     return result_of_function
 

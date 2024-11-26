@@ -15,7 +15,7 @@ def test_get_mask_card_number() -> None:
     [(7000792289606361, "7000 79** **** 6361"), ("5555900038761111", "5555 90** **** 1111")],
 )
 def test_2_get_mask_card_number(card_number: Union[int, str], expected_result: str) -> None:
-    """Функция, тестирующая функцию, которая возвращает маску счёта"""
+    """Функция, тестирующая функцию, которая возвращает маску счёта."""
     assert get_mask_card_number(card_number) == expected_result
 
 

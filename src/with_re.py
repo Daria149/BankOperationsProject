@@ -15,7 +15,7 @@ def search_description(bank_operations: list[dict], for_search: str) -> list[dic
 
 
 def count_operations(bank_operations: list[dict]) -> Any:
-    """Функция, осуществляющая подсчёт количества операций по категориям"""
+    """Функция, осуществляющая подсчёт количества операций по категориям."""
     category = []
     for bank_transaction in bank_operations:
         category.append(bank_transaction.get("description", {}))

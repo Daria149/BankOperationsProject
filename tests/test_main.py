@@ -1,4 +1,5 @@
 from unittest import mock
+
 from unittest.mock import MagicMock, Mock, mock_open, patch
 
 from main import get_transactions_from_file
