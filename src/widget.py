@@ -2,7 +2,7 @@ from src.masks import get_mask_account, get_mask_card_number
 
 
 def mask_account_card(account_information: str) -> str:
-    """Функция, которая маскирует номер карты/счета"""
+    """Функция, которая маскирует номер карты/счета."""
     card_account_number = ""
     space_symbol_index = account_information.rfind(" ")
 

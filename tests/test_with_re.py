@@ -17,6 +17,7 @@ test_data = [
 
 @patch("re.findall")
 def test_search_description(mock_findall):
+    """Функция, тестирующая функцию, которая выполняет заданный поиск в банковских операциях"""
     mock_findall.return_value == [
         {
             "id": 441945886,
@@ -42,6 +43,7 @@ def test_search_description(mock_findall):
 
 
 def test_2_search_description():
+    """Функция, тестирующая функцию, которая выполняет заданный поиск в банковских операциях"""
     assert search_description(test_data, "Перевод организации") == [
         {
             "id": 441945886,
@@ -56,4 +58,5 @@ def test_2_search_description():
 
 
 def test_count_operations():
+    """Функция, тестирующая подсчёт количества операций по категориям"""
     assert count_operations(test_data) == {"Перевод организации": 1}

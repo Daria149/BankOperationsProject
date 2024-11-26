@@ -12,7 +12,7 @@ logger.setLevel(logging.INFO)
 
 
 def get_mask_account(number: Union[int, str]) -> str:
-    """Функция, которая принимает на вход номер счёта и возвращает его маску"""
+    """Функция, которая принимает на вход номер счёта и возвращает его маску."""
 
     account_number = str(number)
     logger.info("Данные для вывода маски счёта получены")

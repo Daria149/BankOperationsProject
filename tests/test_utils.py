@@ -32,7 +32,7 @@ def test_3_get_operations_transactions():
 
 
 def test_transactions_sum():
-    """Функция, тестирующая функцию, которая возвращает сумму транзакции"""
+    """Функция, тестирующая функцию, которая возвращает сумму транзакции."""
     assert (
         transactions_sum(
             get_operations_transactions(

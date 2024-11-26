@@ -2,6 +2,7 @@ import os
 from typing import Union
 
 import requests
+
 from dotenv import load_dotenv
 
 

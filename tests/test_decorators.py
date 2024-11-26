@@ -4,7 +4,7 @@ from src.decorators import log, result_function
 
 
 def test_log_func():
-    """Функция, тестирующая функцию возведения в степень с выводом в консоль"""
+    """Функция, тестирующая функцию возведения в степень с выводом в консоль."""
 
     @log("")
     def result_function(x, y):

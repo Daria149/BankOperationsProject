@@ -19,7 +19,7 @@ def test_2_read_from_csv():
 
 @patch("pandas.read_excel")
 def test_read_from_excel(mock_read_excel):
-    """Функция, тестирующая функцию чтения данных из excel-файла"""
+    """Функция, тестирующая функцию чтения данных из excel-файла."""
     mock_read_excel.return_value = pd.DataFrame({"ID": ["50"], "state": ["EXECUTED"]})
     assert read_from_excel("id,state\\n50,EXECUTED") == [{"ID": "50", "state": "EXECUTED"}]
 

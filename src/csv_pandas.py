@@ -16,7 +16,7 @@ reading_logger.setLevel(logging.INFO)
 
 
 def read_from_csv(file_path: str) -> Any:
-    """Функция, читающая данные из CSV-файла"""
+    """Функция, читающая данные из CSV-файла."""
     try:
         d_reader = pd.read_csv(file_path, delimiter=";")
     except FileNotFoundError:

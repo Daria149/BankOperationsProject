@@ -16,7 +16,7 @@ logger.setLevel(logging.ERROR)
 
 
 def get_operations_transactions(file_path: Any) -> Any:
-    """Обработка Json-файла и преобразование данных в список словарей"""
+    """Обработка Json-файла и преобразование данных в список словарей."""
     datas = []
     try:
         with open(file_path, "r", encoding="utf-8") as transactions_file:

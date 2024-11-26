@@ -4,7 +4,7 @@ from typing import Any
 
 
 def search_description(bank_operations: list[dict], for_search: str) -> list[dict]:
-    """Функция, выполняющая заданный поиск в банковских операциях"""
+    """Функция, выполняющая заданный поиск в банковских операциях."""
     result_operations = []
     for element in bank_operations:
         if re.findall(for_search, element.get("description"), flags=re.IGNORECASE):

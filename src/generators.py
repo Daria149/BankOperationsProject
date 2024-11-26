@@ -53,10 +53,7 @@ def filter_by_currency(all_transactions, currency):
         raise StopIteration("Нет данных")
     elif all_transactions != []:
         for transaction in all_transactions:
-            if (
-                transaction.get("operationAmount").get("currency").get("name") == currency
-                or transaction.get("currency_code") == currency
-            ):
+            if transaction.get("operationAmount").get("currency").get("name") == currency:
                 yield transaction
             else:
                 raise StopIteration("Нет данных")

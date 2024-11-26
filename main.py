@@ -57,28 +57,35 @@ def get_transactions_from_file() -> list[dict]:
         order_sort = input("Программа: Отсортировать 'по возрастанию' или 'по убыванию'?   ").lower()
         if order_sort == "по возрастанию":
             data_sort_flag = False
+            filter_order_transactions = sort_by_date(filter_operations, data_sort_flag)
         elif order_sort == "по убыванию":
             data_sort_flag = True
+            filter_order_transactions = sort_by_date(filter_operations, data_sort_flag)
         else:
             print("Ответ не понятен. Операции будут отсортированы по возрастанию.")
             data_sort_flag = False
-        filter_order_transactions = sort_by_date(filter_operations, data_sort_flag)
+            filter_order_transactions = sort_by_date(filter_operations, data_sort_flag)
     elif data_sort == "нет":
         filter_order_transactions = filter_operations
     else:
         print("Введён некорректный ответ. Операции будут выведены без сортировки")
-    return list(filter_order_transactions)
+        filter_order_transactions = filter_operations
 
     currency_sort = input("Выводить только рублевые тразакции? Да / Нет   ").lower()
     if currency_sort == "да":
-        filter_result = filter_by_currency(filter_order_transactions, "RUB")
-        filter_currency_transactions = list(filter_result)
+        filter_currency_transactions = []
+        for trans in filter_order_transactions:
+            if input_point == 2 or input_point == 3:
+                filter_result = filter_by_currency(filter_order_transactions, "RUB")
+                filter_currency_transactions = filter_result
+            elif input_point == 1:
+                if trans.get("currency_code") == "RUB":
+                    filter_currency_transactions.append(trans)
     elif currency_sort == "нет":
         filter_currency_transactions = filter_order_transactions
     else:
         print("Введён некорректный ответ. Будут выведены все операции")
         filter_currency_transactions = filter_order_transactions
-    return filter_currency_transactions
 
     print(
         "Отфильтровать список транзакций по определенному слову в описании?\n"
@@ -94,7 +101,7 @@ def get_transactions_from_file() -> list[dict]:
         except AttributeError:
             print("Транзакции не найдены")
             filter_word_transactions = []
-    return filter_word_transactions
+
     print("Распечатываю итоговый список транзакций...")
     if len(filter_word_transactions) == 0:
         print("Не найдено ни одной транзакции, подходящей под ваши условия фильтрации")
