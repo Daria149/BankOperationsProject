@@ -1,4 +1,5 @@
 import pytest
+
 from src.processing import filter_by_state, sort_by_date
 
 
@@ -20,6 +21,7 @@ from src.processing import filter_by_state, sort_by_date
     ],
 )
 def test_filter_by_state(information_1: list, expected_result: list) -> None:
+    """Функция, тестирующая функция, которая фильтрует список словарей по статусу"""
     assert filter_by_state(information_1) == expected_result
 
 
@@ -43,4 +45,5 @@ def test_filter_by_state(information_1: list, expected_result: list) -> None:
     ],
 )
 def test_sort_by_date(information_2: list, expected_result_list: list) -> None:
+    """Функция, тестирующая функцию, которая сортирует список словарей по дате."""
     assert sort_by_date(information_2) == expected_result_list
