@@ -24,7 +24,7 @@ def get_transactions_from_file() -> list[dict]:
         )
         input_point = int(input())
         if input_point == 1:
-            print("Для обработки выбран JSON -файл")
+            print("Для обработки выбран JSON -файл.")
             operations_file = get_operations_transactions(json_path)
             break
         elif input_point == 2:

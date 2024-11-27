@@ -9,7 +9,7 @@ def filter_by_state(dictionary_list: List, state: str = "EXECUTED") -> List[dict
             new_dictionary_list.append(element)
         else:
             continue
-        return new_dictionary_list
+    return new_dictionary_list
 
 
 def sort_by_date(dictionary_list: Any, parameter: bool = True) -> List[dict]:
